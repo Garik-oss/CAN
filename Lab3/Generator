@@ -1,0 +1,10 @@
+List = [1, 2, 3, 100, 500, 3, 3]
+
+for i in List:
+    print(i)
+    #List = [10]
+    print(List)
+    if(i == 3):
+        print(List.remove(i))
+
+print("Final: " + str(List))
