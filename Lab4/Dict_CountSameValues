@@ -1,1 +1,15 @@
 
+def count_value_occurrences(input_dict):
+    value_counts = {}
+    
+    for value in input_dict.values():
+        if value in value_counts:
+            value_counts[value] += 1
+        else:
+            value_counts[value] = 1
+
+    return value_counts
+
+example_dict = {'a': 1, 'b': 2, 'c': 1, 'd': 3, 'e': 2}
+result = count_value_occurrences(example_dict)
+print(result)
