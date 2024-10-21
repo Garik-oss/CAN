@@ -1,0 +1,12 @@
+def swap_first_last(tup):
+    if len(tup) < 2:
+        return tup
+    
+    lst = list(tup)
+    lst[0], lst[-1] = lst[-1], lst[0]
+    return tuple(lst)
+
+original_tuple = (1, 2, 3, 4, 5)
+swapped_tuple = swap_first_last(original_tuple)
+
+print(swapped_tuple)
