@@ -10,12 +10,15 @@ for j in range(1, 6):
         else:
             print(blue + "* " + reset, end="")
     for i in range(0, 40):
-        print(white+"  "+reset, end="")
+        if j % 2:
+            print(white+"  "+reset, end="")
+        else:
+            print(red +"  "+reset, end="")
     print("\n")
     
 for j in range(6, 14):
     for i in range(0, 50):
-        if j % 2 == 0:
+        if j % 2 == 1:
             print(white + "  " + reset, end="")
         else:
             print(red + "  " + reset, end="")
