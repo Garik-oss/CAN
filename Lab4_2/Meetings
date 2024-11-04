@@ -1,0 +1,41 @@
+class Event:
+    def __init__(self, title, date):
+        self.title = title
+        self.date = date
+
+    def details(self):
+        return f"Event: {self.title}, Date: {self.date}"
+
+
+class Meeting(Event):
+    def __init__(self, title, date, participants=None):
+        super().__init__(title, date)
+        self.participants = participants if participants is not None else []
+
+    def add_participant(self, participant):
+        self.participants.append(participant)
+
+    def details(self):
+        base_details = super().details()
+        participants_list = ", ".join(self.participants)
+        return f"{base_details}, Participants: {participants_list}"
+
+
+class Appointment(Event):
+    def __init__(self, title, date, time):
+        super().__init__(title, date)
+        self.time = time  # e.g., '10:00 AM'
+
+    def details(self):
+        base_details = super().details()
+        return f"{base_details}, Time: {self.time}"
+
+
+meeting = Meeting("Project Kickoff", "2024-11-10")
+meeting.add_participant("Alice")
+meeting.add_participant("Bob")
+
+appointment = Appointment("Doctor's Visit", "2024-11-12", "2:30 PM")
+
+print(meeting.details())
+print(appointment.details())
